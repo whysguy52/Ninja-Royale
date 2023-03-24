@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://idm45xxxt8pc"
-path="res://.godot/imported/TestNinja.dae-988f07216223158a3ee465daa26fc667.scn"
+path="res://.godot/imported/test_ninja.dae-e1ad29300e25b4f9af63b33c4fbbf002.scn"
 
 [deps]
 
-source_file="res://Assets/BlenderFiles/Ninja/TestNinja.dae"
-dest_files=["res://.godot/imported/TestNinja.dae-988f07216223158a3ee465daa26fc667.scn"]
+source_file="res://assets/3d/ninja/test_ninja.dae"
+dest_files=["res://.godot/imported/test_ninja.dae-e1ad29300e25b4f9af63b33c4fbbf002.scn"]
 
 [params]
 

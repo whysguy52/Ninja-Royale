@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://lukpqw3is8g4"]
+
+[ext_resource type="PackedScene" uid="uid://idm45xxxt8pc" path="res://assets/3d/ninja/test_ninja.dae" id="1_hpnfo"]
+
+[node name="main" type="Node3D"]
+
+[node name="test_ninja" parent="." instance=ExtResource("1_hpnfo")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.985064, 0.172187, 0, -0.172187, 0.985064, 0.921661, 7.47202, 15.3435)
