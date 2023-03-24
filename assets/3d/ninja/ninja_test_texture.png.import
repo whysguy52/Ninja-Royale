@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqf5ujl5g51md"
-path.s3tc="res://.godot/imported/sphere_base_color.png-8c583948f87b2f35f37b5f6c7713dd14.s3tc.ctex"
+uid="uid://c6ygyyslr3na7"
+path.s3tc="res://.godot/imported/ninja_test_texture.png-a861bb21ea5883ef14f1f4d426ee7184.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/3d/ninja/sphere_base_color.png"
-dest_files=["res://.godot/imported/sphere_base_color.png-8c583948f87b2f35f37b5f6c7713dd14.s3tc.ctex"]
+source_file="res://assets/3d/ninja/ninja_test_texture.png"
+dest_files=["res://.godot/imported/ninja_test_texture.png-a861bb21ea5883ef14f1f4d426ee7184.s3tc.ctex"]
 
 [params]
 

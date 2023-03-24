@@ -5,22 +5,22 @@
       <author>Blender User</author>
       <authoring_tool>Blender 3.4.1 commit date:2022-12-19, commit time:17:00, hash:55485cb379f7</authoring_tool>
     </contributor>
-    <created>2023-03-24T12:49:55</created>
-    <modified>2023-03-24T12:49:55</modified>
+    <created>2023-03-24T13:20:49</created>
+    <modified>2023-03-24T13:20:49</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
   <library_effects>
-    <effect id="Material_001-effect">
+    <effect id="ninja_test_material-effect">
       <profile_COMMON>
-        <newparam sid="Sphere_Base_Color-surface">
+        <newparam sid="ninja_test_texture-surface">
           <surface type="2D">
-            <init_from>Sphere_Base_Color</init_from>
+            <init_from>ninja_test_texture</init_from>
           </surface>
         </newparam>
-        <newparam sid="Sphere_Base_Color-sampler">
+        <newparam sid="ninja_test_texture-sampler">
           <sampler2D>
-            <source>Sphere_Base_Color-surface</source>
+            <source>ninja_test_texture-surface</source>
           </sampler2D>
         </newparam>
         <technique sid="common">
@@ -29,7 +29,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <texture texture="Sphere_Base_Color-sampler" texcoord="UVMap"/>
+              <texture texture="ninja_test_texture-sampler" texcoord="UVMap"/>
             </diffuse>
             <index_of_refraction>
               <float sid="ior">1.45</float>
@@ -40,13 +40,13 @@
     </effect>
   </library_effects>
   <library_images>
-    <image id="Sphere_Base_Color" name="Sphere_Base_Color">
-      <init_from>Sphere%20Base%20Color.png</init_from>
+    <image id="ninja_test_texture" name="ninja_test_texture">
+      <init_from>ninja_test_texture.png</init_from>
     </image>
   </library_images>
   <library_materials>
-    <material id="Material_001-material" name="Material.001">
-      <instance_effect url="#Material_001-effect"/>
+    <material id="ninja_test_material-material" name="ninja_test_material">
+      <instance_effect url="#ninja_test_material-effect"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -95,7 +95,7 @@
         <vertices id="Sphere-mesh-vertices">
           <input semantic="POSITION" source="#Sphere-mesh-positions"/>
         </vertices>
-        <triangles material="Material_001-material" count="1664">
+        <triangles material="ninja_test_material-material" count="1664">
           <input semantic="VERTEX" source="#Sphere-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Sphere-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Sphere-mesh-map-0" offset="2" set="0"/>
@@ -108,11 +108,11 @@
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
       <node id="Sphere" name="Sphere" type="NODE">
-        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <matrix sid="transform">7.54979e-8 -1 0 0 1 7.54979e-8 0 0 0 0 1 0 0 0 0 1</matrix>
         <instance_geometry url="#Sphere-mesh" name="Sphere">
           <bind_material>
             <technique_common>
-              <instance_material symbol="Material_001-material" target="#Material_001-material">
+              <instance_material symbol="ninja_test_material-material" target="#ninja_test_material-material">
                 <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
             </technique_common>
