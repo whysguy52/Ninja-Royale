@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://vi16tgx64h6t"
-path="res://.godot/imported/ninja_test_mesh.dae-9955ff4bea77104b235e58b4b799ba1b.scn"
+path="res://.godot/imported/ninja.dae-9e881fd984f1ab6bb58d18569302c369.scn"
 
 [deps]
 
-source_file="res://assets/3d/ninja/ninja_test_mesh.dae"
-dest_files=["res://.godot/imported/ninja_test_mesh.dae-9955ff4bea77104b235e58b4b799ba1b.scn"]
+source_file="res://assets/3d/ninja/ninja.dae"
+dest_files=["res://.godot/imported/ninja.dae-9e881fd984f1ab6bb58d18569302c369.scn"]
 
 [params]
 
