@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://mqemcrvs5wca"]
-
-[ext_resource type="PackedScene" uid="uid://vi16tgx64h6t" path="res://assets/3d/ninja/ninja.dae" id="1_eauip"]
-
-[node name="ninja" instance=ExtResource("1_eauip")]
