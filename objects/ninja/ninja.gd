@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+
 const GRAVITY = -32.8
 const MAX_SPEED = 5
 const JUMP_SPEED = 7
@@ -18,12 +19,13 @@ var can_climb_ladder = false
 var camera
 var rotation_helper
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
   camera = $rotation/camera
   rotation_helper = $rotation
 
   Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 func _physics_process(delta):
   process_menu()
@@ -38,15 +40,18 @@ func process_menu():
     else:
       Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+
 func process_input():
   process_sprint()
   process_walk_direction()
   process_jump()
 
+
 func process_sprint():
   if !is_sprinting and Input.is_action_just_pressed("sprint"):
     is_sprinting = true
     $sprint_timer.start()
+
 
 func process_walk_direction():
   dir = Vector3()
@@ -79,9 +84,11 @@ func process_walk_direction():
   dir += -cam_xform.basis.z.normalized() * input_movement_vector.y
   dir += cam_xform.basis.x.normalized() * input_movement_vector.x
 
+
 func process_jump():
   if Input.is_action_pressed("jump") and is_on_floor():
     velocity.y = JUMP_SPEED
+
 
 func process_movement(delta):
   dir.y = 0
@@ -114,6 +121,7 @@ func process_movement(delta):
   velocity.z = hvel.z
 
   move_and_slide()
+
 
 func _input(event):
   if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
