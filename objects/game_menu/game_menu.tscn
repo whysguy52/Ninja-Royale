@@ -76,14 +76,6 @@ layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="save_button" type="Button" parent="margin/vbox/buttons_margin/buttons_hbox"]
-layout_mode = 2
-text = "Save"
-
-[node name="save_continue_button" type="Button" parent="margin/vbox/buttons_margin/buttons_hbox"]
-layout_mode = 2
-text = "Save & Continue"
-
 [node name="continue_button" type="Button" parent="margin/vbox/buttons_margin/buttons_hbox"]
 layout_mode = 2
 text = "Continue"
@@ -93,7 +85,7 @@ layout_mode = 2
 text = "Exit"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="margin/vbox/buttons_margin/buttons_hbox/save_button" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="margin/vbox/buttons_margin/buttons_hbox/save_continue_button" to="." method="_on_save_continue_button_pressed"]
+[connection signal="pressed" from="margin/vbox/tab_container/Controls/vbox/camera_vert_invert" to="." method="_on_camera_vert_invert_pressed"]
+[connection signal="pressed" from="margin/vbox/tab_container/Controls/vbox/camera_horz_invert" to="." method="_on_camera_horz_invert_pressed"]
 [connection signal="pressed" from="margin/vbox/buttons_margin/buttons_hbox/continue_button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="margin/vbox/buttons_margin/buttons_hbox/exit_button" to="." method="_on_exit_button_pressed"]
