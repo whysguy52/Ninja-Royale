@@ -1,9 +1,9 @@
 extends CharacterBody3D
 
 
-const GRAVITY = -32.8
+const GRAVITY = -99
 const SPEED = 5
-const JUMP_SPEED = 7
+const JUMP_SPEED = 25
 const LADDER_SPEED = 2.69
 const ACCEL = 4.5
 const DEACCEL = 16
