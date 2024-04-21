@@ -14,7 +14,6 @@ const SPRINT_ACCEL = 9
 var dir = Vector3()
 var is_sprinting = false
 var can_climb_ladder = false
-var is_disabled = false
 
 var camera
 var rotation_helper
@@ -24,15 +23,20 @@ func _ready():
   camera = $rotation/camera
   rotation_helper = $rotation
 
-  Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
   Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
-  if is_disabled:
-    return
-
+  process_menu()
   process_input()
   process_movement(delta)
+
+
+func process_menu():
+  if Input.is_action_just_pressed("menu"):
+    if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+      Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+    else:
+      Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func process_input():
   process_sprint()
@@ -112,9 +116,6 @@ func process_movement(delta):
   move_and_slide()
 
 func _input(event):
-  if is_disabled:
-    return
-
   if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
     rotation_helper.rotate_x(deg_to_rad(event.relative.y * MOUSE_SENSITIVITY))
     self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))
