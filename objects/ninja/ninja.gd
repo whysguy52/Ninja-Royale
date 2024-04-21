@@ -29,11 +29,8 @@ func _physics_process(delta):
 
 
 func process_menu():
-  if Input.is_action_just_pressed("menu"):
-    if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-      Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-    else:
-      Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+  if not $game_menu.visible and Input.is_action_just_pressed("menu"):
+    $game_menu.show()
 
 
 func process_input():

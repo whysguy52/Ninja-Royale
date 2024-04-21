@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv2vyiaqgtyad"]
+
+[ext_resource type="Script" path="res://objects/game_menu/game_menu.gd" id="1_evcqb"]
+[ext_resource type="Theme" uid="uid://cvcho3048p7ku" path="res://assets/2d/default_theme.tres" id="1_f56fj"]
+
+[node name="game_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_evcqb")
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 192
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 192
+theme_override_constants/margin_bottom = 32
+
+[node name="bg" type="ColorRect" parent="margin"]
+layout_mode = 2
+theme = ExtResource("1_f56fj")
+color = Color(0, 0, 0, 1)
+
+[node name="vbox" type="VBoxContainer" parent="margin"]
+layout_mode = 2
+
+[node name="tab_container" type="TabContainer" parent="margin/vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/side_margin = 8
+
+[node name="Controls" type="MarginContainer" parent="margin/vbox/tab_container"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="vbox" type="VBoxContainer" parent="margin/vbox/tab_container/Controls"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="camera_label" type="Label" parent="margin/vbox/tab_container/Controls/vbox"]
+layout_mode = 2
+text = "Camera"
+
+[node name="camera_vert_invert" type="CheckButton" parent="margin/vbox/tab_container/Controls/vbox"]
+layout_mode = 2
+text = "Invert Camera Vertically"
+
+[node name="camera_horz_invert" type="CheckButton" parent="margin/vbox/tab_container/Controls/vbox"]
+layout_mode = 2
+text = "Invert Camera Horizontally"
+
+[node name="Audio" type="VBoxContainer" parent="margin/vbox/tab_container"]
+visible = false
+layout_mode = 2
+
+[node name="buttons_margin" type="MarginContainer" parent="margin/vbox"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="buttons_hbox" type="HBoxContainer" parent="margin/vbox/buttons_margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="save_button" type="Button" parent="margin/vbox/buttons_margin/buttons_hbox"]
+layout_mode = 2
+text = "Save"
+
+[node name="save_continue_button" type="Button" parent="margin/vbox/buttons_margin/buttons_hbox"]
+layout_mode = 2
+text = "Save & Continue"
+
+[node name="continue_button" type="Button" parent="margin/vbox/buttons_margin/buttons_hbox"]
+layout_mode = 2
+text = "Continue"
+
+[node name="exit_button" type="Button" parent="margin/vbox/buttons_margin/buttons_hbox"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="margin/vbox/buttons_margin/buttons_hbox/save_button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="margin/vbox/buttons_margin/buttons_hbox/save_continue_button" to="." method="_on_save_continue_button_pressed"]
+[connection signal="pressed" from="margin/vbox/buttons_margin/buttons_hbox/continue_button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="margin/vbox/buttons_margin/buttons_hbox/exit_button" to="." method="_on_exit_button_pressed"]
