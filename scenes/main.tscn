@@ -1,14 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwd6allu48tph"]
+[gd_scene load_steps=4 format=3 uid="uid://bwd6allu48tph"]
 
 [ext_resource type="PackedScene" uid="uid://djwu8x5qee54e" path="res://objects/ninja/ninja.tscn" id="1_fj747"]
-[ext_resource type="Texture2D" uid="uid://by0qc0o48eg7n" path="res://assets/2d/grid.png" id="2_ggk8q"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_461u6"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4iekp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw3st"]
-albedo_texture = ExtResource("2_ggk8q")
 
 [node name="main" type="Node3D"]
 
@@ -23,7 +19,6 @@ shape = SubResource("WorldBoundaryShape3D_461u6")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="plane"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("PlaneMesh_4iekp")
-surface_material_override/0 = SubResource("StandardMaterial3D_sw3st")
 
 [node name="ninja" parent="." instance=ExtResource("1_fj747")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.78595, 0)
