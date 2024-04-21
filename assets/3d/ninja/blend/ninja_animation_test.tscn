@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp5b3c7norqfw"]
+
+[ext_resource type="PackedScene" uid="uid://byodx81345iyi" path="res://assets/3d/ninja/blend/ninja_separate_attempt.blend" id="1_lwdl8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2yg01"]
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_anepk"]
+
+[node name="Node3D" type="CharacterBody3D"]
+
+[node name="ninja_separate_attempt" parent="." instance=ExtResource("1_lwdl8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_2yg01")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationRootNode_anepk")
