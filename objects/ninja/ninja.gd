@@ -14,6 +14,7 @@ const DASH_ACCEL = 15
 
 var dir = Vector3()
 var can_dash = true
+var can_jump = true
 var is_dashing = false
 var can_climb_ladder = false
 
@@ -81,8 +82,11 @@ func process_walk_direction():
 
 
 func process_jump():
-  if Input.is_action_pressed("jump") and is_on_floor():
+  if can_jump and Input.is_action_just_pressed("jump") and is_on_floor():
+    can_jump = false
     velocity.y = JUMP_SPEED
+  elif not can_jump and is_on_floor() and $jump_cooldown_timer.is_stopped():
+    $jump_cooldown_timer.start()
 
 
 func process_movement(delta):
@@ -142,3 +146,7 @@ func _on_dash_timer_timeout():
 
 func _on_dash_cooldown_timer_timeout():
   can_dash = true
+
+
+func _on_jump_cooldown_timer_timeout():
+  can_jump = true
