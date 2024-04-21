@@ -119,9 +119,14 @@ func process_movement(delta):
 
 func _input(event):
   if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-    # TODO: add customization to invert camera in settings
-    $rotation.rotate_x(deg_to_rad(event.relative.y * MOUSE_SENSITIVITY))
-    self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))
+    # TODO: maybe cache this after settings save, so we don't have to fetch from dictionaries all the time?
+    var invert_vert = Settings.controls["camera"]["invert_vert"] if Settings.controls["camera"]["invert_vert"] != null else false
+    var invert_horz = Settings.controls["camera"]["invert_horz"] if Settings.controls["camera"]["invert_horz"] != null else false
+    var vert_val = -1 if invert_vert else 1
+    var horz_val = -1 if invert_horz else 1
+
+    $rotation.rotate_x(deg_to_rad(event.relative.y * MOUSE_SENSITIVITY * vert_val))
+    self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * horz_val))
 
     var camera_rot = $rotation.rotation_degrees
     camera_rot.x = clamp(camera_rot.x, -45, 45)

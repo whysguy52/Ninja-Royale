@@ -15,18 +15,6 @@ func _process(_delta):
   if Input.is_action_just_pressed("menu"):
     hide()
 
-func save():
-  print(">>> save (WIP)")
-
-
-func _on_save_continue_button_pressed():
-  save()
-  hide()
-
-
-func _on_save_button_pressed():
-  save()
-
 
 func _on_visibility_changed():
   if visible:
@@ -42,3 +30,11 @@ func _on_continue_button_pressed():
 
 func _on_exit_button_pressed():
   get_tree().quit()
+
+
+func _on_camera_vert_invert_pressed():
+  Settings.toggle_controls("camera", "invert_vert")
+
+
+func _on_camera_horz_invert_pressed():
+  Settings.toggle_controls("camera", "invert_horz")
