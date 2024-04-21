@@ -21,4 +21,13 @@ shape = SubResource("CapsuleShape3D_1uppa")
 [node name="camera" type="Camera3D" parent="rotation"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 5)
 
-[node name="sprint_timer" type="Timer" parent="."]
+[node name="dash_timer" type="Timer" parent="."]
+wait_time = 0.175
+one_shot = true
+
+[node name="dash_cooldown_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="dash_cooldown_timer" to="." method="_on_dash_cooldown_timer_timeout"]
