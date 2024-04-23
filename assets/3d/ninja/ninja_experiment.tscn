@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://djwu8x5qee54e"]
+
+[ext_resource type="Script" path="res://objects/ninja/ninja.gd" id="1_25gms"]
+[ext_resource type="PackedScene" uid="uid://coco2dpvnda0a" path="res://assets/3d/ninja/blend/ninja.blend" id="2_7twj3"]
+[ext_resource type="PackedScene" uid="uid://cv2vyiaqgtyad" path="res://objects/game_menu/game_menu.tscn" id="3_e4yuf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1uppa"]
+radius = 0.289129
+
+[node name="ninja" type="CharacterBody3D"]
+script = ExtResource("1_25gms")
+
+[node name="ninja" parent="." instance=ExtResource("2_7twj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0275541)
+
+[node name="collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_1uppa")
+
+[node name="rotation" type="Node3D" parent="."]
+
+[node name="camera" type="Camera3D" parent="rotation"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 5)
+
+[node name="dash_timer" type="Timer" parent="."]
+wait_time = 0.175
+one_shot = true
+
+[node name="dash_cooldown_timer" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="jump_cooldown_timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="game_menu" parent="." instance=ExtResource("3_e4yuf")]
+visible = false
+
+[connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="dash_cooldown_timer" to="." method="_on_dash_cooldown_timer_timeout"]
+[connection signal="timeout" from="jump_cooldown_timer" to="." method="_on_jump_cooldown_timer_timeout"]
