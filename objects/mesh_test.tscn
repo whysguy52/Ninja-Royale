@@ -5,6 +5,7 @@ size = Vector3(10, 0.1, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7k4f"]
 disable_ambient_light = true
+albedo_color = Color(0.662745, 0, 0, 1)
 metallic_specular = 0.0
 
 [node name="mesh_test" type="MeshInstance3D"]

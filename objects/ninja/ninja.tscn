@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://djwu8x5qee54e"]
 
 [ext_resource type="Script" path="res://objects/ninja/ninja.gd" id="1_25gms"]
-[ext_resource type="PackedScene" uid="uid://coco2dpvnda0a" path="res://assets/3d/ninja/blend/ninja.blend" id="2_7twj3"]
+[ext_resource type="PackedScene" uid="uid://coojheclspb4t" path="res://assets/3d/ninja/blend/ninja_base.tscn" id="2_yjdkg"]
 [ext_resource type="PackedScene" uid="uid://cv2vyiaqgtyad" path="res://objects/game_menu/game_menu.tscn" id="3_e4yuf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1uppa"]
@@ -10,7 +10,7 @@ radius = 0.289129
 [node name="ninja" type="CharacterBody3D"]
 script = ExtResource("1_25gms")
 
-[node name="ninja" parent="." instance=ExtResource("2_7twj3")]
+[node name="ninja2" parent="." instance=ExtResource("2_yjdkg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0275541)
 
 [node name="collision" type="CollisionShape3D" parent="."]
