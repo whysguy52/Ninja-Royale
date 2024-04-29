@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djwu8x5qee54e" path="res://objects/ninja/ninja.tscn" id="1_fj747"]
 [ext_resource type="Texture2D" uid="uid://by0qc0o48eg7n" path="res://assets/2d/grid.png" id="2_ggk8q"]
-[ext_resource type="PackedScene" uid="uid://c7vs20ggwn05m" path="res://objects/mesh_test.tscn" id="3_d4b2m"]
+[ext_resource type="PackedScene" uid="uid://c7vs20ggwn05m" path="res://assets/3d/test_materials/mesh_test.tscn" id="3_d4b2m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_55wo0"]
 
