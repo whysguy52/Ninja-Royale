@@ -31,7 +31,7 @@ mesh = SubResource("PlaneMesh_4iekp")
 surface_material_override/0 = SubResource("StandardMaterial3D_sw3st")
 
 [node name="ninja" parent="." instance=ExtResource("1_fj747")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61594, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56071, 1, 2.01474)
 
 [node name="mesh_test" parent="." instance=ExtResource("3_d4b2m")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -44,3 +44,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -5)
 
 [node name="mesh_test3" parent="." instance=ExtResource("3_d4b2m")]
 transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 5, 0, -10)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 5, -1)
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 6.0
+spot_attenuation = 1.52587e-05
+spot_angle = 30.0
+spot_angle_attenuation = 1e-05
