@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwd6allu48tph"]
+[gd_scene load_steps=8 format=3 uid="uid://bwd6allu48tph"]
 
 [ext_resource type="PackedScene" uid="uid://djwu8x5qee54e" path="res://objects/ninja/ninja.tscn" id="1_fj747"]
 [ext_resource type="Texture2D" uid="uid://by0qc0o48eg7n" path="res://assets/2d/grid.png" id="2_ggk8q"]
+[ext_resource type="PackedScene" uid="uid://b8saacju24yqf" path="res://objects/surface_t.tscn" id="3_1w7if"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_55wo0"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_461u6"]
 
@@ -13,9 +16,11 @@ albedo_texture = ExtResource("2_ggk8q")
 [node name="main" type="Node3D"]
 
 [node name="sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.1195, 0)
+transform = Transform3D(0.61661, 0.590003, 0.521238, 0, -0.662084, 0.74943, 0.787269, -0.462106, -0.408248, 0, 9.80396, 0)
+shadow_enabled = true
 
 [node name="plane" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_55wo0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="plane"]
 shape = SubResource("WorldBoundaryShape3D_461u6")
@@ -27,3 +32,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sw3st")
 
 [node name="ninja" parent="." instance=ExtResource("1_fj747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Surface_t" parent="." instance=ExtResource("3_1w7if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.665154, 0)
+
+[node name="Surface_t2" parent="." instance=ExtResource("3_1w7if")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10, -4.33485, 0)
+
+[node name="Surface_t3" parent="." instance=ExtResource("3_1w7if")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, -4.33485, -10)
+
+[node name="Surface_t4" parent="." instance=ExtResource("3_1w7if")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, 0, 1, 4.37114e-08, -1, 0, 1.91069e-15, 11, 5.66515, -10)
