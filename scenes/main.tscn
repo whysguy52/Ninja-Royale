@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djwu8x5qee54e" path="res://objects/ninja/ninja.tscn" id="1_fj747"]
 [ext_resource type="Texture2D" uid="uid://by0qc0o48eg7n" path="res://assets/2d/grid.png" id="2_ggk8q"]
-[ext_resource type="PackedScene" uid="uid://b8saacju24yqf" path="res://objects/surface_t.tscn" id="3_1w7if"]
+[ext_resource type="PackedScene" uid="uid://c7vs20ggwn05m" path="res://objects/mesh_test.tscn" id="3_d4b2m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_55wo0"]
 
@@ -33,14 +33,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sw3st")
 [node name="ninja" parent="." instance=ExtResource("1_fj747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Surface_t" parent="." instance=ExtResource("3_1w7if")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.665154, 0)
+[node name="mesh_test" parent="." instance=ExtResource("3_d4b2m")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="Surface_t2" parent="." instance=ExtResource("3_1w7if")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10, -4.33485, 0)
+[node name="mesh_test2" parent="." instance=ExtResource("3_d4b2m")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10, 0, -5)
 
-[node name="Surface_t3" parent="." instance=ExtResource("3_1w7if")]
-transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, -4.33485, -10)
+[node name="mesh_test4" parent="." instance=ExtResource("3_d4b2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -5)
 
-[node name="Surface_t4" parent="." instance=ExtResource("3_1w7if")]
-transform = Transform3D(1.91069e-15, -4.37114e-08, 1, 0, 1, 4.37114e-08, -1, 0, 1.91069e-15, 11, 5.66515, -10)
+[node name="mesh_test3" parent="." instance=ExtResource("3_d4b2m")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 5, 0, -10)
