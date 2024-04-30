@@ -1710,6 +1710,7 @@ animation = &"idle_stand"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_atp31"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_e0pmx"]
+graph_offset = Vector2(-578.21, 75.2718)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_6fo1k")
 nodes/Add2/position = Vector2(-80, 240)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_tiynl")
