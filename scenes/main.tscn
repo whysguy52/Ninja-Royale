@@ -1,17 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwd6allu48tph"]
+[gd_scene load_steps=5 format=3 uid="uid://bwd6allu48tph"]
 
 [ext_resource type="PackedScene" uid="uid://djwu8x5qee54e" path="res://objects/ninja/ninja.tscn" id="1_fj747"]
-[ext_resource type="Texture2D" uid="uid://by0qc0o48eg7n" path="res://assets/2d/grid.png" id="2_ggk8q"]
 [ext_resource type="PackedScene" uid="uid://c7vs20ggwn05m" path="res://assets/3d/test_materials/mesh_test.tscn" id="3_d4b2m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_55wo0"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_461u6"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_4iekp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw3st"]
-albedo_texture = ExtResource("2_ggk8q")
 
 [node name="main" type="Node3D"]
 
@@ -22,19 +16,15 @@ shadow_enabled = true
 [node name="plane" type="StaticBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_55wo0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="plane"]
+[node name="collision" type="CollisionShape3D" parent="plane"]
 shape = SubResource("WorldBoundaryShape3D_461u6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="plane"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-mesh = SubResource("PlaneMesh_4iekp")
-surface_material_override/0 = SubResource("StandardMaterial3D_sw3st")
+[node name="mesh" parent="plane" instance=ExtResource("3_d4b2m")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+skeleton = NodePath("../..")
 
 [node name="ninja" parent="." instance=ExtResource("1_fj747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56071, 1, 2.01474)
-
-[node name="mesh_test" parent="." instance=ExtResource("3_d4b2m")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="mesh_test2" parent="." instance=ExtResource("3_d4b2m")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10, 0, -5)
