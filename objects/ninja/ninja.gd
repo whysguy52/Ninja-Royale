@@ -17,11 +17,22 @@ var can_dash = true
 var can_jump = true
 var is_dashing = false
 var can_climb_ladder = false
-var mesh_for_material = load("res://assets/3d/ninja/blend/ninja.blend::StandardMaterial3D_2lrnk")
+
+var ninja_blend = preload("res://assets/3d/ninja/blend/ninja.blend")
 
 func _ready():
   Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-  mesh_for_material.disable_ambient_light = true
+
+  adjust_ninja_material()
+
+
+func adjust_ninja_material():
+  var instance = ninja_blend.instantiate()
+  var mesh: MeshInstance3D = instance.get_node("Armature/Skeleton3D/Arms")
+  var material: StandardMaterial3D = mesh.get_active_material(0)
+
+  material.disable_ambient_light = true
+
 
 func _physics_process(delta):
   process_menu()
