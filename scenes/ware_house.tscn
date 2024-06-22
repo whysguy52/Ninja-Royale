@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cskbkmvxgnglm"]
+
+[ext_resource type="PackedScene" uid="uid://c05gc2yg4xpuu" path="res://assets/3d/test_level/restaurant.blend" id="1_sya2y"]
+[ext_resource type="PackedScene" uid="uid://djwu8x5qee54e" path="res://objects/ninja/ninja.tscn" id="2_yu8ms"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h4o5y"]
+size = Vector3(40, 1, 40)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="restaurant" parent="." instance=ExtResource("1_sya2y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_h4o5y")
+
+[node name="ninja" parent="." instance=ExtResource("2_yu8ms")]

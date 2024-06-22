@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1uppa"]
 radius = 0.289129
 
-[sub_resource type="Animation" id="Animation_ka2ho"]
+[sub_resource type="Animation" id="Animation_1f8nv"]
 resource_name = "arm_run"
 length = 0.833333
 loop_mode = 1
@@ -425,7 +425,7 @@ tracks/58/interp = 1
 tracks/58/loop_wrap = true
 tracks/58/keys = PackedFloat32Array(0, 1, -0.00478271, -5.65048e-07, 5.75051e-07, 0.999989)
 
-[sub_resource type="Animation" id="Animation_b04gp"]
+[sub_resource type="Animation" id="Animation_ygcf8"]
 resource_name = "idle_stand"
 length = 0.0416667
 tracks/0/type = "rotation_3d"
@@ -842,7 +842,7 @@ tracks/58/interp = 1
 tracks/58/loop_wrap = true
 tracks/58/keys = PackedFloat32Array(0, 1, -0.00478271, -5.65048e-07, 5.75051e-07, 0.999989)
 
-[sub_resource type="Animation" id="Animation_km3ws"]
+[sub_resource type="Animation" id="Animation_alfnf"]
 resource_name = "leg_run"
 length = 0.833333
 loop_mode = 1
@@ -1260,7 +1260,7 @@ tracks/58/interp = 1
 tracks/58/loop_wrap = true
 tracks/58/keys = PackedFloat32Array(0, 1, -0.00478271, -5.65048e-07, 5.75051e-07, 0.999989)
 
-[sub_resource type="Animation" id="Animation_avy10"]
+[sub_resource type="Animation" id="Animation_s5xjb"]
 resource_name = "sword_run"
 length = 0.833333
 tracks/0/type = "position_3d"
@@ -1677,12 +1677,12 @@ tracks/58/interp = 1
 tracks/58/loop_wrap = true
 tracks/58/keys = PackedFloat32Array(0, 1, 0.331667, 0.1, -0.883333)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_myq6n"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u70xp"]
 _data = {
-"arm_run": SubResource("Animation_ka2ho"),
-"idle_stand": SubResource("Animation_b04gp"),
-"leg_run": SubResource("Animation_km3ws"),
-"sword_run": SubResource("Animation_avy10")
+"arm_run": SubResource("Animation_1f8nv"),
+"idle_stand": SubResource("Animation_ygcf8"),
+"leg_run": SubResource("Animation_alfnf"),
+"sword_run": SubResource("Animation_s5xjb")
 }
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_6fo1k"]
@@ -1823,7 +1823,7 @@ visible = false
 [node name="animation_tree" type="AnimationTree" parent="."]
 root_node = NodePath("../ninja2")
 libraries = {
-"": SubResource("AnimationLibrary_myq6n")
+"": SubResource("AnimationLibrary_u70xp")
 }
 tree_root = SubResource("AnimationNodeBlendTree_e0pmx")
 anim_player = NodePath("../ninja2/AnimationPlayer")
