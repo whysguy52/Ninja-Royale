@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cskbkmvxgnglm"]
+[gd_scene load_steps=10 format=3 uid="uid://cskbkmvxgnglm"]
 
 [ext_resource type="PackedScene" uid="uid://wfg5jrjbcmoe" path="res://assets/3d/test_level/restaurant.blend" id="1_sya2y"]
 [ext_resource type="PackedScene" uid="uid://djwu8x5qee54e" path="res://objects/ninja/ninja.tscn" id="2_yu8ms"]
+[ext_resource type="Shader" uid="uid://bd1yvyslrj7iq" path="res://reveal_shader.gdshader" id="3_yclkw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k83wm"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -12,13 +13,20 @@ energy_multiplier = 0.0
 sky_material = SubResource("ProceduralSkyMaterial_k83wm")
 
 [sub_resource type="Environment" id="Environment_h5q5o"]
-background_mode = 2
 sky = SubResource("Sky_yclkw")
 tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h4o5y"]
 size = Vector3(40, 1, 40)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h5q5o"]
+render_priority = 1
+shader = ExtResource("3_yclkw")
+shader_parameter/is_hidden = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_okgi7"]
+material = SubResource("ShaderMaterial_h5q5o")
 
 [node name="Node3D" type="StaticBody3D"]
 
@@ -38,3 +46,7 @@ shape = SubResource("BoxShape3D_h4o5y")
 
 [node name="ninja" parent="." instance=ExtResource("2_yu8ms")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298401, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.49999997, -1.4901161e-08, 0.86602545, -0.86602545, 0, 0.49999997, 0, -1, -4.371139e-08, 3, 3, 0)
+mesh = SubResource("QuadMesh_okgi7")
