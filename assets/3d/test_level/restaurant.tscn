@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvtb3cowdka1"]
+
+[ext_resource type="PackedScene" uid="uid://wfg5jrjbcmoe" path="res://assets/3d/test_level/restaurant.blend" id="1_ulp2a"]
+
+[node name="restaurant" instance=ExtResource("1_ulp2a")]
+
+[node name="Spot" parent="." index="2"]
+shadow_enabled = true

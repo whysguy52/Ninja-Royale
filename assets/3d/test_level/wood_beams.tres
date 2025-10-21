@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://djtmqk0ru64gu"]
+
+[ext_resource type="Texture2D" uid="uid://dn2h3qva7etgv" path="res://assets/3d/test_level/WoodFlooringAshMediumWhite001_COL_2K - Copy.jpg" id="1_68nue"]
+
+[resource]
+resource_name = "wood_beams"
+cull_mode = 2
+albedo_texture = ExtResource("1_68nue")
+roughness = 0.5
+uv1_scale = Vector3(10, 10, 1)
+uv1_offset = Vector3(0, -9, 0)

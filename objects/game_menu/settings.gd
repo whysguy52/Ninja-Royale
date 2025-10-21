@@ -3,7 +3,7 @@ extends Node
 
 var controls: Dictionary = {
   "camera": {
-    "invert_vert": false,
+    "invert_vert": true,
     "invert_horz": false
   }
 }
