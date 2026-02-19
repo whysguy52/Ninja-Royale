@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://djwu8x5qee54e"]
+[gd_scene format=3 uid="uid://djwu8x5qee54e"]
 
 [ext_resource type="Script" uid="uid://enwhwjlsg6eb" path="res://objects/ninja/ninja.gd" id="1_25gms"]
 [ext_resource type="PackedScene" uid="uid://coco2dpvnda0a" path="res://assets/3d/ninja/blend/ninja.blend" id="2_yjdkg"]
@@ -32,10 +32,10 @@ animation = &"idle_stand"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_atp31"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_e0pmx"]
-graph_offset = Vector2(-528.508, -41.889145)
+graph_offset = Vector2(-509.88477, 82.44922)
 nodes/output/position = Vector2(620, 140)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_6fo1k")
-nodes/Add2/position = Vector2(-80, 240)
+nodes/Add2/position = Vector2(-60, 240)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_tiynl")
 nodes/Animation/position = Vector2(-80, 60)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_sv0be")
@@ -54,34 +54,36 @@ nodes/blend_idle_run/node = SubResource("AnimationNodeBlend2_atp31")
 nodes/blend_idle_run/position = Vector2(120, 140)
 node_connections = [&"output", 0, &"TimeScale", &"Add2", 0, &"Animation 2", &"Add2", 1, &"blend_arms", &"TimeScale", 0, &"TimeSeek", &"TimeSeek", 0, &"blend_idle_run", &"blend_arms", 0, &"Animation 3", &"blend_arms", 1, &"Animation 4", &"blend_idle_run", 0, &"Animation", &"blend_idle_run", 1, &"Add2"]
 
-[node name="ninja" type="CharacterBody3D"]
+[node name="ninja" type="CharacterBody3D" unique_id=1843098373]
 script = ExtResource("1_25gms")
 
-[node name="ninja2" parent="." instance=ExtResource("2_yjdkg")]
+[node name="ninja2" parent="." unique_id=1832568095 instance=ExtResource("2_yjdkg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0275541)
 
 [node name="Skeleton3D" parent="ninja2/Armature" index="0"]
+bones/0/rotation = Quaternion(0, 1, 0, -7.54979e-08)
 bones/4/rotation = Quaternion(0.08215642, 0.155498, -0.98131216, 0.078085184)
 bones/5/rotation = Quaternion(0.30077648, 4.219221e-07, -1.4004973e-05, 0.95369464)
-bones/7/rotation = Quaternion(0.00024585004, 0.00024391711, -0.7071059, 0.7071076)
-bones/8/rotation = Quaternion(0.027669093, 0.02767837, -0.7065676, 0.7065626)
-bones/9/rotation = Quaternion(0.0027199762, 0.00270168, -0.7070964, 0.7071068)
+bones/7/rotation = Quaternion(0.00024583514, 0.00024393201, -0.7071059, 0.7071076)
+bones/8/rotation = Quaternion(0.02766909, 0.027678387, -0.7065676, 0.7065626)
+bones/9/rotation = Quaternion(0.0027199767, 0.0027016688, -0.7070964, 0.7071068)
 bones/10/rotation = Quaternion(-0.006279295, -0.0062810034, -0.70707816, 0.70707965)
 bones/11/rotation = Quaternion(0.0103074, 0.010311533, -0.70703346, 0.70702976)
 bones/12/rotation = Quaternion(0.0002933047, 0.000294119, -0.7071072, 0.70710623)
-bones/13/rotation = Quaternion(0.0036103285, 0.0036089798, -0.7070969, 0.7070983)
-bones/14/rotation = Quaternion(-0.0063739177, -0.006374052, -0.7070781, 0.707078)
-bones/15/rotation = Quaternion(-0.0033449116, -0.0033483903, -0.7070969, 0.7071009)
-bones/16/rotation = Quaternion(0.00982116, 0.009820029, -0.7070378, 0.70703936)
-bones/17/rotation = Quaternion(-0.036176603, -0.036176573, -0.70618093, 0.7061807)
-bones/18/rotation = Quaternion(0.0011832294, 0.001183247, -0.7071059, 0.7071057)
+bones/13/rotation = Quaternion(0.00361031, 0.0036089798, -0.7070969, 0.7070983)
+bones/14/rotation = Quaternion(-0.0063738995, -0.0063740336, -0.7070781, 0.707078)
+bones/15/rotation = Quaternion(-0.0033449014, -0.0033483729, -0.7070969, 0.7071009)
+bones/16/rotation = Quaternion(0.009821234, 0.009820074, -0.7070378, 0.70703936)
+bones/17/rotation = Quaternion(-0.036176644, -0.036176614, -0.70618093, 0.7061807)
+bones/18/rotation = Quaternion(0.001183242, 0.0011832502, -0.7071059, 0.7071057)
 bones/19/rotation = Quaternion(0.43984914, 0.42708007, -0.06204136, 0.7875826)
-bones/20/rotation = Quaternion(-0.28993514, -0.636658, -0.30768013, 0.6449319)
-bones/21/rotation = Quaternion(-0.56478804, 2.8515512e-07, -9.52817e-07, 0.82523614)
-bones/22/rotation = Quaternion(-0.27060282, 0.6532839, -0.27059448, -0.6532786)
+bones/20/rotation = Quaternion(-0.2899351, -0.636658, -0.30768, 0.64493203)
+bones/21/rotation = Quaternion(-0.56478804, 2.7222512e-07, -9.0756953e-07, 0.82523614)
+bones/22/rotation = Quaternion(-0.2706028, 0.6532839, -0.27059454, -0.65327865)
 bones/23/rotation = Quaternion(5.6851786e-06, 3.984959e-06, -0.70710605, 0.7071075)
 bones/26/rotation = Quaternion(0.12416207, -0.12707998, 0.9808797, 0.07943181)
 bones/27/rotation = Quaternion(0.23478976, -4.4429888e-07, 1.0922317e-05, 0.97204626)
+bones/28/rotation = Quaternion(-0.0047827167, -5.66441e-07, 5.759892e-07, 0.99998856)
 bones/29/rotation = Quaternion(0.00024580533, -0.0002438873, 0.707106, 0.7071075)
 bones/30/rotation = Quaternion(0.02766134, -0.027679924, 0.70657027, 0.70656013)
 bones/31/rotation = Quaternion(0.0027233793, -0.0027052278, 0.7070965, 0.7071066)
@@ -89,9 +91,9 @@ bones/32/rotation = Quaternion(-0.0062794075, 0.006281052, 0.70707834, 0.7070795
 bones/33/rotation = Quaternion(0.0103090955, -0.0103090275, 0.7070317, 0.70703155)
 bones/34/rotation = Quaternion(0.0002892209, -0.00029909718, 0.7071111, 0.7071023)
 bones/35/rotation = Quaternion(0.0036103881, -0.003609058, 0.7070969, 0.7070983)
-bones/36/rotation = Quaternion(-0.006375497, 0.006372664, 0.70707995, 0.7070762)
+bones/36/rotation = Quaternion(-0.0063754977, 0.0063726637, 0.70707995, 0.7070762)
 bones/37/rotation = Quaternion(-0.0033477757, 0.0033438543, 0.70710117, 0.70709664)
-bones/38/rotation = Quaternion(0.009821138, -0.009819731, 0.70703787, 0.7070393)
+bones/38/rotation = Quaternion(0.009821138, -0.009819716, 0.70703787, 0.70703936)
 bones/39/rotation = Quaternion(-0.036177427, 0.03617549, 0.7061828, 0.7061788)
 bones/40/rotation = Quaternion(0.0011858878, -0.0011837996, 0.707104, 0.70710754)
 bones/41/rotation = Quaternion(0.4398489, -0.42708, 0.062041502, 0.7875828)
@@ -118,31 +120,32 @@ bones/63/position = Vector3(0.47692534, 0.31457433, 0.01666662)
 bones/64/position = Vector3(0.75057554, 1.5364088, -2.6833334)
 bones/65/position = Vector3(0.49917683, 0.10137534, -0.8853655)
 
-[node name="collision" type="CollisionShape3D" parent="."]
+[node name="collision" type="CollisionShape3D" parent="." unique_id=419788080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1uppa")
 
-[node name="rotation" type="Node3D" parent="."]
+[node name="rotation" type="Node3D" parent="." unique_id=639750189]
 
-[node name="camera" type="Camera3D" parent="rotation"]
+[node name="camera" type="Camera3D" parent="rotation" unique_id=1099382627]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 5)
+current = true
 
-[node name="dash_timer" type="Timer" parent="."]
+[node name="dash_timer" type="Timer" parent="." unique_id=521017267]
 wait_time = 0.175
 one_shot = true
 
-[node name="dash_cooldown_timer" type="Timer" parent="."]
+[node name="dash_cooldown_timer" type="Timer" parent="." unique_id=174301273]
 wait_time = 0.75
 one_shot = true
 
-[node name="jump_cooldown_timer" type="Timer" parent="."]
+[node name="jump_cooldown_timer" type="Timer" parent="." unique_id=1716477061]
 wait_time = 0.25
 one_shot = true
 
-[node name="game_menu" parent="." instance=ExtResource("3_e4yuf")]
+[node name="game_menu" parent="." unique_id=866493790 instance=ExtResource("3_e4yuf")]
 visible = false
 
-[node name="animation_tree" type="AnimationTree" parent="."]
+[node name="animation_tree" type="AnimationTree" parent="." unique_id=95594055]
 root_node = NodePath("../ninja2")
 tree_root = SubResource("AnimationNodeBlendTree_e0pmx")
 anim_player = NodePath("../ninja2/AnimationPlayer")
@@ -151,6 +154,11 @@ parameters/TimeScale/scale = 1.0
 parameters/TimeSeek/seek_request = -1.0
 parameters/blend_arms/blend_amount = 0.0
 parameters/blend_idle_run/blend_amount = 0.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=294568153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.521575, -0.0057207346)
+layers = 2
+light_cull_mask = 4293918722
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash_cooldown_timer" to="." method="_on_dash_cooldown_timer_timeout"]

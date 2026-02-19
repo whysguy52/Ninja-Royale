@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://clrnifxmkjafv"]
+
+[ext_resource type="Shader" uid="uid://gq4nikc8qi5s" path="res://objects/test_sphere.gdshader" id="1_emouc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1h6j"]
+render_priority = 0
+shader = ExtResource("1_emouc")
+shader_parameter/alpha_scale = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_emouc"]
+material = SubResource("ShaderMaterial_m1h6j")
+radial_segments = 32
+
+[node name="Node3D" type="MeshInstance3D" unique_id=1831602560]
+layers = 2
+mesh = SubResource("SphereMesh_emouc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=478005187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.117724)
+light_energy = 8.365
+editor_only = true
+sky_mode = 1
