@@ -54,6 +54,8 @@ nodes/blend_idle_run/node = SubResource("AnimationNodeBlend2_atp31")
 nodes/blend_idle_run/position = Vector2(120, 140)
 node_connections = [&"output", 0, &"TimeScale", &"Add2", 0, &"Animation 2", &"Add2", 1, &"blend_arms", &"TimeScale", 0, &"TimeSeek", &"TimeSeek", 0, &"blend_idle_run", &"blend_arms", 0, &"Animation 3", &"blend_arms", 1, &"Animation 4", &"blend_idle_run", 0, &"Animation", &"blend_idle_run", 1, &"Add2"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_mawjy"]
+
 [node name="ninja" type="CharacterBody3D" unique_id=1843098373]
 script = ExtResource("1_25gms")
 
@@ -159,6 +161,12 @@ parameters/blend_idle_run/blend_amount = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.521575, -0.0057207346)
 layers = 2
 light_cull_mask = 4293918722
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1371085256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.202, -5)
+layers = 2
+mesh = SubResource("SphereMesh_mawjy")
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash_cooldown_timer" to="." method="_on_dash_cooldown_timer_timeout"]
